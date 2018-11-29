@@ -18,7 +18,11 @@ def main():
     #print_sequence1()
     #draw_circles1()
     #print_sequence2()
-    draw_circles2()
+    #draw_circles2()
+    #print_sequence3()
+    #draw_circles3()
+    #print_cosines()
+    draw_cosines_and_sines()
 
 def print_sequence1():
     """
@@ -118,7 +122,7 @@ def draw_circles2():
     -- Waits for the user to press the mouse, then closes the window.
     """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement this function, per its doc-string above.
+    # Done: 5. Implement this function, per its doc-string above.
     # Put a statement in  main  to test this function.
     # REQUIREMENT: You must use a   RANGE  statement to solve this problem.
     # -------------------------------------------------------------------------
@@ -136,9 +140,10 @@ def draw_circles2():
         turtle.go_to(rg.Point(50+20*k, 100))
         turtle.pen_down()
         turtle.set_heading(0)
-        turtle.draw_circle(10)
         turtle.begin_fill()
+        turtle.draw_circle(10)
         turtle.end_fill()
+    window.close_on_mouse_click()
 def print_sequence3():
     """
     Prints:
@@ -150,7 +155,7 @@ def print_sequence3():
       100.
     """
     # -------------------------------------------------------------------------
-    # TODO: 6. Implement this function, per its doc-string above.
+    # Done: 6. Implement this function, per its doc-string above.
     # Put a statement in  main  to test this function.
     # REQUIREMENT: You must use a   RANGE  statement to solve this problem.
     # -------------------------------------------------------------------------
@@ -158,7 +163,8 @@ def print_sequence3():
     print('--------------------------------------------------')
     print('Running print_sequence3:')
     print('--------------------------------------------------')
-
+    for k in range(1,101):
+        print(k)
 
 def draw_circles3():
     """
@@ -169,7 +175,7 @@ def draw_circles3():
     -- Waits for the user to press the mouse, then closes the window.
     """
     # -------------------------------------------------------------------------
-    # TODO: 7. Implement this function, per its doc-string above.
+    # Done: 7. Implement this function, per its doc-string above.
     # Put a statement in  main  to test this function.
     # REQUIREMENT: You must use a   RANGE  statement to solve this problem.
     # -------------------------------------------------------------------------
@@ -177,7 +183,18 @@ def draw_circles3():
     print('--------------------------------------------------')
     print('Running draw_circles3:  See graphics window')
     print('--------------------------------------------------')
+    window = rg.RoseWindow(300, 300)
+    turtle = rg.SimpleTurtle()
+    turtle.pen=rg.Pen('blue',2)
+    turtle.pen_up()
+    turtle.go_to(rg.Point(100,150))
+    turtle.pen_down()
+    turtle.set_heading(0)
+    turtle.speed = 1000
+    for k in range(1,101):
 
+        turtle.draw_circle(k)
+    window.close_on_mouse_click()
 
 def print_cosines():
     """
@@ -198,7 +215,7 @@ def print_cosines():
        68.9855097830147
     """
     # -------------------------------------------------------------------------
-    # TODO: 8. Implement this function, per its doc-string above.
+    # done: 8. Implement this function, per its doc-string above.
     # Put a statement in  main  to test this function.
     # REQUIREMENT: You must use a   RANGE  statement to solve this problem.
     #
@@ -213,7 +230,9 @@ def print_cosines():
     print('--------------------------------------------------')
     print('Running print_cosines:')
     print('--------------------------------------------------')
-
+    import math
+    for k in range (101):
+        print(80*math.cos(k))
 
 def draw_cosines_and_sines():
     """
@@ -230,7 +249,7 @@ def draw_cosines_and_sines():
     -- Waits for the user to press the mouse, then closes the window.
     """
     # -------------------------------------------------------------------------
-    # TODO: 9. Implement this function, per its doc-string above.
+    # done: 9. Implement this function, per its doc-string above.
     # Put a statement in  main  to test this function.
     # REQUIREMENT: You must use a   RANGE  statement to solve this problem.
     # -------------------------------------------------------------------------
@@ -238,7 +257,18 @@ def draw_cosines_and_sines():
     print('--------------------------------------------------')
     print('Running draw_cosines_and_sines:  See graphics window')
     print('--------------------------------------------------')
-
+    import math
+    window = rg.RoseWindow(400, 400)
+    turtle = rg.SimpleTurtle()
+    turtle.pen=rg.Pen('blue',1)
+    turtle.paint_bucket=rg.PaintBucket('blue')
+    turtle.speed = 10000
+    for k in range(101):
+        turtle.pen_up()
+        turtle.go_to(rg.Point(200+math.cos(80*k),200+math.sin(80*k)))
+        turtle.pen_down()
+        turtle.draw_circle(10)
+    window.close_on_mouse_click()
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
