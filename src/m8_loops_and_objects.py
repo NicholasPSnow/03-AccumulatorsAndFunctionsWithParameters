@@ -15,13 +15,13 @@ import rosegraphics as rg
 def main():
     """ Calls the other functions to demonstrate and/or test them. """
     # Test your functions by putting calls to them here:
-    #print_sequence1()
-    #draw_circles1()
-    #print_sequence2()
-    #draw_circles2()
-    #print_sequence3()
-    #draw_circles3()
-    #print_cosines()
+    print_sequence1()
+    draw_circles1()
+    print_sequence2()
+    draw_circles2()
+    print_sequence3()
+    draw_circles3()
+    print_cosines()
     draw_cosines_and_sines()
 
 def print_sequence1():
@@ -66,25 +66,11 @@ def draw_circles1():
     print('Running draw_circles1:  See graphics window')
     print('--------------------------------------------------')
     window=rg.RoseWindow(400,400)
-    turtle=rg.SimpleTurtle()
-    turtle.pen_up()
-    turtle.go_to(rg.Point(200, 200))
-    turtle.pen_down()
-    turtle.set_heading(0)
-    turtle.speed=1000
     for k in range (21):
-        turtle.pen_up()
-        turtle.right(90)
-        turtle.forward(10)
-        turtle.left(90)
-        turtle.pen_down()
-        turtle.draw_circle(k*10)
-
-
-
-
-
-
+       circle=rg.Circle(rg.Point(200,200),k*10)
+       circle.attach_to(window)
+    window.render()
+    window.close_on_mouse_click()
 
 
 def print_sequence2():
@@ -131,19 +117,13 @@ def draw_circles2():
     print('Running draw_circles2:  See graphics window')
     print('--------------------------------------------------')
     window = rg.RoseWindow(400, 400)
-    turtle = rg.SimpleTurtle()
-    turtle.pen=rg.Pen('blue',2)
-    turtle.paint_bucket=rg.PaintBucket('blue')
-    turtle.speed = 1000
     for k in range(18):
-        turtle.pen_up()
-        turtle.go_to(rg.Point(50+20*k, 100))
-        turtle.pen_down()
-        turtle.set_heading(0)
-        turtle.begin_fill()
-        turtle.draw_circle(10)
-        turtle.end_fill()
+       circle=rg.Circle(rg.Point(50+20*k,100),10)
+       circle.fill_color='blue'
+       circle.attach_to(window)
+    window.render()
     window.close_on_mouse_click()
+
 def print_sequence3():
     """
     Prints:
@@ -184,16 +164,10 @@ def draw_circles3():
     print('Running draw_circles3:  See graphics window')
     print('--------------------------------------------------')
     window = rg.RoseWindow(300, 300)
-    turtle = rg.SimpleTurtle()
-    turtle.pen=rg.Pen('blue',2)
-    turtle.pen_up()
-    turtle.go_to(rg.Point(100,150))
-    turtle.pen_down()
-    turtle.set_heading(0)
-    turtle.speed = 1000
     for k in range(1,101):
-
-        turtle.draw_circle(k)
+        circle=rg.Circle(rg.Point(200,150),k)
+        circle.attach_to(window)
+    window.render()
     window.close_on_mouse_click()
 
 def print_cosines():
@@ -259,16 +233,10 @@ def draw_cosines_and_sines():
     print('--------------------------------------------------')
     import math
     window = rg.RoseWindow(400, 400)
-    turtle = rg.SimpleTurtle()
-    turtle.pen=rg.Pen('blue',1)
-    turtle.paint_bucket=rg.PaintBucket('blue')
-    turtle.speed = 10000
     for k in range(101):
-        turtle.pen_up()
-        turtle.go_to(rg.Point(200+math.cos(80*k),200+math.sin(80*k)))
-        turtle.pen_down()
-        turtle.draw_circle(10)
-
+        circle=rg.Circle(rg.Point(200+math.cos(80*k),200+math.sin(80*k)),10)
+        circle.attach_to(window)
+    window.render()
     window.close_on_mouse_click()
 
 # -----------------------------------------------------------------------------
