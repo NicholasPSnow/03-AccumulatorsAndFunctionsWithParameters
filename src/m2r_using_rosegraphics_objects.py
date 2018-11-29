@@ -17,7 +17,7 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
 #     a. For the RoseGraphics coordinate system:
 #
 #        -- Where is the (0, 0) point on the screen?
-#              It is directly in the center
+#              It is in the top left
 #
 #        -- In what direction on the screen
 #           does the positive X-axis point?
@@ -25,10 +25,10 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
 #
 #        -- In what direction on the screen
 #           does the positive Y-axis point?
-#              Up
+#              Down
 #
 #     b. Write a line of code that constructs a RoseWindow object:
-#            window=rg.TurtleWindow()
+#             window = rg.RoseWindow()
 #
 #     c. What is the default height of a RoseWindow?
 #        (Use the HOVER trick to determine the answer to this question.)
@@ -42,21 +42,21 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
 #
 #          -- Write the names of two types of graphics objects that
 #             you can construct OTHER than Circle and Point:
-#                Square and Regular Polygon
+#               Rectangle and Line and Ellipse
 
 #          -- Write the names of three METHODs that Circle objects have:
-#                If, Not, While
+#                attach,  Clone and Move
 #
 #          -- Write the names of three INSTANCE VARIABLEs that Circle
 #             objects have:
-#                Self, Turtle, Radius
+#                Fill Color,  Radius, Thickness
 #
 #     f. What does a RoseWindow RENDER method do?
 #            It renders the objects attached to the window
 #
 #     g. When is a RoseWindow close_on_mouse_click method call
 #        necessary?  Why?
-#           It closes the rose window when it is clicked. It is necessary because it is how the window is closed
+#           It only closes the window when clicked so no immediently
 #
 #   ASK QUESTIONS ** NOW ** if you do not understand how the
 #     RoseGraphics graphics system works.
@@ -139,7 +139,6 @@ def example3():
     circle = rg.Circle(center_point, radius)
     circle.fill_color = 'green'
     circle.attach_to(window)
-
     # ------------------------------------------------------------------
     # Rectangle: needs two opposite corners.
     # ------------------------------------------------------------------

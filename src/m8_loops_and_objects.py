@@ -268,6 +268,7 @@ def draw_cosines_and_sines():
         turtle.go_to(rg.Point(200+math.cos(80*k),200+math.sin(80*k)))
         turtle.pen_down()
         turtle.draw_circle(10)
+
     window.close_on_mouse_click()
 
 # -----------------------------------------------------------------------------
