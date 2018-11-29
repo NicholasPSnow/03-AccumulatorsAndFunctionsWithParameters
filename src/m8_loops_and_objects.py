@@ -6,8 +6,8 @@ This module demonstrates simple LOOPS of the form:
 and also USING OBJECTS.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
-         Aaron Wilkin, their colleagues, and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Aaron Wilkin, their colleagues, and Nicholas Snow.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -15,7 +15,10 @@ import rosegraphics as rg
 def main():
     """ Calls the other functions to demonstrate and/or test them. """
     # Test your functions by putting calls to them here:
-
+    #print_sequence1()
+    #draw_circles1()
+    #print_sequence2()
+    draw_circles2()
 
 def print_sequence1():
     """
@@ -29,7 +32,7 @@ def print_sequence1():
        200
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement this function, per its doc-string above.
+    # Done: 2. Implement this function, per its doc-string above.
     # Put a statement in  main  to test this function.
     # REQUIREMENT: You must use a   RANGE  statement to solve this problem.
     # -------------------------------------------------------------------------
@@ -37,7 +40,8 @@ def print_sequence1():
     print('--------------------------------------------------')
     print('Running print_sequence1:')
     print('--------------------------------------------------')
-
+    for k in range(21):
+        print(k*10)
 
 def draw_circles1():
     """
@@ -48,7 +52,7 @@ def draw_circles1():
     -- Waits for the user to press the mouse, then closes the window.
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement this function, per its doc-string above.
+    # Done: 3. Implement this function, per its doc-string above.
     # Put a statement in  main  to test this function.
     # REQUIREMENT: You must use a   RANGE  statement to solve this problem.
     # HINT: You might find a prior module useful when 'writing' this code.
@@ -57,9 +61,30 @@ def draw_circles1():
     print('--------------------------------------------------')
     print('Running draw_circles1:  See graphics window')
     print('--------------------------------------------------')
+    window=rg.RoseWindow(400,400)
+    turtle=rg.SimpleTurtle()
+    turtle.pen_up()
+    turtle.go_to(rg.Point(200, 200))
+    turtle.pen_down()
+    turtle.set_heading(0)
+    turtle.speed=1000
+    for k in range (21):
+        turtle.pen_up()
+        turtle.right(90)
+        turtle.forward(10)
+        turtle.left(90)
+        turtle.pen_down()
+        turtle.draw_circle(k*10)
+
+
+
+
+
+
 
 
 def print_sequence2():
+
     """
     Prints:
       50
@@ -71,7 +96,7 @@ def print_sequence2():
       390.
     """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement this function, per its doc-string above.
+    # Done: 4. Implement this function, per its doc-string above.
     # Put a statement in  main  to test this function.
     # REQUIREMENT: You must use a   RANGE  statement to solve this problem.
     # -------------------------------------------------------------------------
@@ -79,7 +104,8 @@ def print_sequence2():
     print('--------------------------------------------------')
     print('Running print_sequence2:')
     print('--------------------------------------------------')
-
+    for k in range(18):
+        print(50+20*k)
 
 def draw_circles2():
     """
@@ -100,8 +126,19 @@ def draw_circles2():
     print('--------------------------------------------------')
     print('Running draw_circles2:  See graphics window')
     print('--------------------------------------------------')
-
-
+    window = rg.RoseWindow(400, 400)
+    turtle = rg.SimpleTurtle()
+    turtle.pen=rg.Pen('blue',2)
+    turtle.paint_bucket=rg.PaintBucket('blue')
+    turtle.speed = 1000
+    for k in range(18):
+        turtle.pen_up()
+        turtle.go_to(rg.Point(50+20*k, 100))
+        turtle.pen_down()
+        turtle.set_heading(0)
+        turtle.draw_circle(10)
+        turtle.begin_fill()
+        turtle.end_fill()
 def print_sequence3():
     """
     Prints:
